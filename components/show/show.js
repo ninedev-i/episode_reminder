@@ -62,7 +62,7 @@
 		* @param {MouseEvent} event
 		*/
 		_onCLick (event) {
-			event.preventDefault();
+			
 			let target = event.target;
 
 			if (target.classList.contains('show__del')) {
