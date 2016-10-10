@@ -4,7 +4,6 @@
 	let TVshow = window.TVshow;
 
 	let show1 = new TVshow({
-		el: document.querySelector('.show1'),
 		data: {
 			title: 'Очень странные дела ',
 			link: 'http://fanserials.tv/stranger-things/',
@@ -30,7 +29,6 @@
 	});
 
 	let show2 = new TVshow({
-		el: document.querySelector('.show2'),
 		data: {
 			title: 'Мир дикого запада',
 			link: 'http://fanserials.tv/westworld/',
@@ -44,5 +42,7 @@
 			]
 		}
 	});
+
+	let add = new addNewShow({ });
 
 })();

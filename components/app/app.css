@@ -1,20 +1,26 @@
 html{font-family:sans-serif;}
 body {
   background-color: #EDEFF0;
+  width: 100%;
+  overflow-x: hidden;
 }
 h1 {
   text-align: center;
 }
+input {
+  display: block;
+  padding: 5px;
+  margin-bottom: 10px;
+}
 .app {
-  margin: 15px;
-  display: inline-flex
+  display: flex;
+  flex-wrap: wrap;
 }
 .tvshow {
-  margin-right: 20px;
-  display: inline-block;
+  margin: 20px 10px;
   padding: 20px;
   background-color: white;
-
+  position: relative;
 }
 .tvshow img {
   width: 150px;
@@ -37,15 +43,37 @@ h1 {
   margin-left: 5px;
   content: "✓";
 }
-
-.show__del {
-  display: inline-block;
+.show__del, .addBlock {
+  border: 0px;
   padding: 7px;
   font-size: 13px;
   cursor: pointer;
   background-color: #e6e6e6;
 }
-.show__del:hover {
+
+.show__del {
+  display: none;
+  line-height: 8px;
+  z-index: 10;
+}
+.tvshow:hover .show__del {
+  display: block;
+  background-color: #e6e6e6;
+  color: grey;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+.tvshow:hover .show__del:hover {
+  background-color: #F2594B;
+  color: white;
+}
+.addBlock:hover {
   background-color: #8EC0F4;
   color: white;
+}
+
+.add {
+  display: inline-flex;
+  order: 1;
 }

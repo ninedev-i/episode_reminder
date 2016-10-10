@@ -8,14 +8,21 @@
 		* @parm {Object} options
 		*/
 		constructor (options) {
-			this.el = options.el;
+			this.el = document.querySelector('.app');
 			this.data = options.data;
 			this._initEvents();
 			this.render();
 		}
 
 		render () {
-			this.el.innerHTML = '';
+			// this.el.innerHTML = `<img src='${this.data.cover}'>
+			// 										<b class='show__title'>${this.data.title}</b>
+			// 										<ul class='show__list'></ul>
+			// 										<button class='show__del'>Удалить сериал</button>`;
+
+			let addShowBlock = document.createElement('div');
+			addShowBlock.className = 'tvshow';
+			this.el.appendChild(addShowBlock);
 
 			let img = document.createElement('img');
 			img.src = this.data.cover;
@@ -42,12 +49,12 @@
 
 			let deleteButton = document.createElement('div');
 			deleteButton.classList.add('show__del');
-			deleteButton.innerHTML = "Удалить сериал";
+			deleteButton.innerHTML = "x";
 
-			this.el.appendChild(img);
-			this.el.appendChild(title);
-			this.el.appendChild(list);
-			this.el.appendChild(deleteButton);
+			addShowBlock.appendChild(img);
+			addShowBlock.appendChild(title);
+			addShowBlock.appendChild(list);
+			addShowBlock.appendChild(deleteButton);
 		}
 
 		/**
@@ -62,7 +69,7 @@
 		* @param {MouseEvent} event
 		*/
 		_onCLick (event) {
-			
+
 			let target = event.target;
 
 			if (target.classList.contains('show__del')) {
