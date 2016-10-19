@@ -41,7 +41,7 @@
 			});
 
 			let deleteButton = document.createElement('div');
-			deleteButton.classList.add('show__del');
+			deleteButton.classList.add('button');
 			deleteButton.innerHTML = "Удалить сериал";
 
 			this.el.appendChild(img);
