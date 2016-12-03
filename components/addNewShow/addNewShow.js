@@ -39,7 +39,7 @@
 			event.preventDefault();
 			let target = event.target;
 
-			if (target.classList.contains('show__del')) {
+			if (target.classList.contains('button')) {
 				target.parentNode.remove(target.parentNode);
 			}
 		}
